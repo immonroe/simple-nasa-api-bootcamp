@@ -47,10 +47,15 @@ li, a {
   font-size: 1.5rem;
 }
 
-img, iframe {
-  max-height: 100%;
-  max-width: 100%;
+img, h3 {
+  /* max-height: 80%; */
+  max-width: 80%;
 }
+
+/* iframe {
+  width: 80%;
+  height: 100%;
+} */
 
 .results, form {
   display: flex;

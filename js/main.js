@@ -16,6 +16,7 @@ button.addEventListener('click', () => {
         document.querySelector('h3').innerText = data.explanation
         if (data.hdurl) {
             document.querySelector('img').src = data.hdurl
+            // document.querySelector("iframe").style.display = "none";
         } else {
             document.querySelector('iframe').src = data.url
         }
