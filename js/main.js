@@ -2,7 +2,7 @@
 // Needs api-datakey and date - you can use random email
 
 const button = document.querySelector('button')
-const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY'
+const url = 'https://api.nasa.gov/planetary/apod?api_key=NXAAGwyfeIROseR1cQLlLqNzaMag8fYRk6eYt89P'
 
 button.addEventListener('click', () => {
     let search = document.querySelector('input').value
@@ -13,9 +13,12 @@ button.addEventListener('click', () => {
         // console.log(data.date === search)
         console.log(data)
         document.querySelector('h2').innerText = data.title
-        document.querySelector('img').src = data.hdurl
         document.querySelector('h3').innerText = data.explanation
-
+        if (data.hdurl) {
+            document.querySelector('img').src = data.hdurl
+        } else {
+            document.querySelector('iframe').src = data.url
+        }
     })
     .catch(err => {
         console.log(`error ${err}`)
